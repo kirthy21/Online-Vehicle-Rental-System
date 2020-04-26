@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2017 at 12:55 PM
+-- Generation Time: Jun 03, 2017 at 10:37 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -49,24 +49,18 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `guide` varchar(250) NOT NULL,
   `status` varchar(250) NOT NULL DEFAULT '0',
   `days` varchar(20) DEFAULT '1',
+  `fstatus` varchar(250) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id`, `vid`, `uid`, `booking_date`, `booked_date`, `number`, `driver`, `guide`, `status`, `days`) VALUES
-(1, '18', 'ee', '2017-04-25', '2017-04-26', 'OEGPJ9G4NY', 'yes', 'yes', '1', '1'),
-(3, '18', 'ee', '2017-04-26', '2017-04-27', '1FJCBAYG4V', 'yes', 'no', '1', '23'),
-(4, '20', 'kirthy', '2017-04-26', '2017-03-30', '983W994TYQ', 'yes', 'no', '1', '3'),
-(5, '20', 'kirthy', '2017-04-26', '2017-03-30', 'ATXOL2GATR', 'yes', 'no', '1', '3'),
-(6, '20', 'kirthy', '2017-04-26', '2017-03-31', '3VODKRF17S', 'yes', 'no', '1', '3'),
-(7, '20', 'kirthy', '2017-04-26', '2017-04-29', '2PUQBTAOIC', 'yes', 'no', '1', '3'),
-(8, '20', 'kirthy', '2017-04-26', '2017-05-10', 'LHLZ3Q7FDP', 'yes', 'no', '1', '5'),
-(10, '20', 'kirthy', '2017-04-26', '2017-05-11', '8HFS63E39T', 'null', 'null', '1', '4'),
-(11, '20', 'kirthy', '2017-04-26', '2017-05-04', '0EM5XI1SCX', 'yes', 'no', '1', '5'),
-(12, '4', 'kirthy', '2017-04-27', '2017-05-01', '3QWDSK33KT', 'no', 'no', '1', '2');
+INSERT INTO `booking` (`id`, `vid`, `uid`, `booking_date`, `booked_date`, `number`, `driver`, `guide`, `status`, `days`, `fstatus`) VALUES
+(32, '12', 'kirthy', '2017-06-03', '2017-06-08', '1AZLMSC8PV', 'yes', 'yes', '1', '5', '0'),
+(33, '12', 'amritha', '2017-06-03', '2017-06-02', 'R5VDO6NCW1', 'yes', 'yes', '1', '3', '0'),
+(34, '11', 'yami', '2017-06-03', '2017-06-04', 'EBQ8LHZZXJ', 'yes', 'yes', '1', '4', '0');
 
 -- --------------------------------------------------------
 
@@ -79,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `v_id` varchar(250) NOT NULL,
   `model` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `category`
@@ -111,28 +105,16 @@ CREATE TABLE IF NOT EXISTS `driver` (
   `experience` varchar(250) NOT NULL,
   `image` varchar(250) NOT NULL,
   PRIMARY KEY (`driver_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `driver`
 --
 
 INSERT INTO `driver` (`driver_id`, `driver_name`, `address`, `phone_no`, `gender`, `age`, `email_id`, `licenseno`, `experience`, `image`) VALUES
-(1, 'TFTG', 'DFRTGY', '5456', 'Male', '546', 'DD@gmail.com', '5676', '65', '049130604Kumarakom_Main_thumb.jpg'),
-(2, 'TFTG', 'DFRTGY', '5456', 'Male', '546', 'DD@gmail.com', '5676', '65', '049130604Kumarakom_Main_thumb.jpg'),
-(3, 'cg', 'gcfg678', '789', 'Male', '76', 'f@gmail.com', 'y78', '78', 'autumn-nature-wallpaper-desktop-wallpaper-4.jpg'),
-(4, 'fgdhggk', 'vfhgfmnhj', '46565476', 'Male', '12', 'gf@gfjhgfgdhg.com', 'ujlif5 4ylhkjn765', '45', ''),
-(5, 'fgdhggk', 'vfhgfmnhj', '46565476', 'Male', '12', 'gf@gfjhgfgdhg.com', 'ujlif5 4ylhkjn765', '45', ''),
-(6, 'O97', 'YK', '8965', 'Female', '75', 'f@gmail.com', '75785643', '75', 'autumn-nature-wallpaper-desktop-wallpaper-4.jpg'),
-(7, 'O97', 'YK', '8965', 'Female', '75', 'f@gmail.com', '75785643', '75', 'autumn-nature-wallpaper-desktop-wallpaper-4.jpg'),
-(8, 'HFJHKJ', 'FDBNBNM', '6567', 'Male', '45', 'A@GMAIil.com', 'null', '23', ''),
-(9, 'kokkol', 'kokkm', '141585kmm', 'Male', '', '', '', '', ''),
-(10, 'jjkeekd', 'erety4lko', '4852952', 'Male', '', '', '', '', ''),
-(11, 'uhu7ijko', 'jhbyuhjio', '51585981', 'Male', '45', 'xsedrtvf@hvgvt', '', '5', ''),
-(12, 'raghav', 'kerala', '', 'Male', '', '', '', '', ''),
-(13, 'rajan', 'malachery', '9443214', 'Male', '56', 'g@gmail.com', '245789', '5', ''),
-(14, 'raj', 'kerala', '123456789', 'Male', '35', 'raj@gmail.com', '123456', '4', ''),
-(15, 'athira', 'silky silver glade', '123456789', 'male', '30', 'athi@gmail.com', '626165651', '15', 'Bangtan Boys.png');
+(19, 'Balan', 'Thopumpady', '984616512', 'male', '40', 'b@gmail.com', '6626226', '20', 'dr2.jpg'),
+(20, 'john', 'abasvilla\r\nernakulam ', '9876532310', 'male', '45', 'john@gmail.com', '234', '7', 'dr3.jpg'),
+(21, 'mohan', 'mahanvilla', '91456789564', 'male', '37', 'mohan@gmail.com', '34567', '4', 'guide4.jpg');
 
 -- --------------------------------------------------------
 
@@ -145,15 +127,20 @@ CREATE TABLE IF NOT EXISTS `driver_assign` (
   `did` varchar(250) NOT NULL,
   `bid` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `driver_assign`
 --
 
 INSERT INTO `driver_assign` (`id`, `did`, `bid`) VALUES
-(2, '13', '1'),
-(3, '1', '3');
+(23, '21', '27'),
+(24, '20', '28'),
+(25, '21', '29'),
+(26, '20', '29'),
+(27, '20', '31'),
+(28, '19', '32'),
+(29, '20', '34');
 
 -- --------------------------------------------------------
 
@@ -166,14 +153,18 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `user_id` varchar(250) NOT NULL,
   `feedback` varchar(250) NOT NULL,
   PRIMARY KEY (`f_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `feedback`
 --
 
 INSERT INTO `feedback` (`f_id`, `user_id`, `feedback`) VALUES
-(1, 'ee', 'bsvhshvh');
+(3, 'Athira', 'good experience'),
+(5, 'kirthy', 'nice!'),
+(6, 'roshan', 'hello'),
+(7, 'amena', 'very  nice trip .felt amazing...'),
+(8, 'remiya', 'very good service!!');
 
 -- --------------------------------------------------------
 
@@ -192,29 +183,16 @@ CREATE TABLE IF NOT EXISTS `guide` (
   `experience` varchar(250) DEFAULT NULL,
   `image` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`guide_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `guide`
 --
 
 INSERT INTO `guide` (`guide_id`, `guidename`, `address`, `phoneno`, `age`, `gender`, `emailid`, `experience`, `image`) VALUES
-(1, 'fshgh', 'fvdfr', '123', '', 'Male', 'A@GMAIL.COM', '', ''),
-(2, 'thrgg', 'fdsgvf', '343', '34', 'Male', 'A@GMAIL.COM', '12', ''),
-(3, '"+a+"', '"+b+"', '"+c+"', '"+f+"', '"+g+"', '"+d+"', '"+e+"', '"+i+"'),
-(4, 'yu6kiu', 'tuyi', '543657', '24', 'Male', 'A@GMAIL.COM', '1', ''),
-(5, '"+a+"', '"+b+"', '"+c+"', '"+f+"', '"+g+"', '"+d+"', '"+e+"', '"+h+"'),
-(6, 'kirthy', 'monlight sparkle', '658468464', '5', 'Female', 'kjnyh@jfv.sfr', '25', ''),
-(7, 'hfmh', 'mhvm', '', '', 'Male', '', '', ''),
-(8, 'ramesh', 'kerala', '', '', 'Male', '', '', ''),
-(9, 'rahul', 'kerala', '123456', '35', 'Male', 'rahul@gmail.com', '3', ''),
-(10, 'shyam', 'kerala', '123456789', '28', 'Male', 'shyam@gmail.com', '2', 'C:UsersAnilDesktop3e058b91c88b3f26581cf9d95a620277.jpg'),
-(11, 'piyush', 'kerala', '123456789', '34', 'Male', 'piyush@gmail.com', '3', 'C:UsersAnilDesktop3e058b91c88b3f26581cf9d95a620277.jpg'),
-(12, '', '', '', '5757', 'null', '', '', ''),
-(13, '', '', '', '57', 'null', '', '', ''),
-(14, '', '', '', '5757', 'null', '', '', ''),
-(15, '', '', '', '5757', 'null', '', '', ''),
-(16, '', '', '', '5757', 'null', '', '', '');
+(18, 'annjoseph', 'leonava villa\r\nthrissur', '9448623134', '35', 'null', 'ann@gmail.com', '5', 'guide3.jpg'),
+(19, 'maria john', 'maasenges\r\nkottayam', '9087453217', '45', 'null', 'maria@gmail.com', '8', 'gu1.jpg'),
+(21, 'jain', 'kerala', '723889894', '45', 'male', 'jain@gmail.com', '2', 'aadhar.png');
 
 -- --------------------------------------------------------
 
@@ -227,14 +205,20 @@ CREATE TABLE IF NOT EXISTS `guide_assign` (
   `gid` varchar(250) NOT NULL,
   `bid` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `guide_assign`
 --
 
 INSERT INTO `guide_assign` (`id`, `gid`, `bid`) VALUES
-(1, '8', '1');
+(13, '18', '15'),
+(14, '18', '27'),
+(15, '19', '28'),
+(16, '21', '29'),
+(17, '21', '31'),
+(18, '18', '34'),
+(19, '19', '32');
 
 -- --------------------------------------------------------
 
@@ -262,34 +246,51 @@ CREATE TABLE IF NOT EXISTS `login` (
   `password` varchar(250) NOT NULL,
   `role` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
 -- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `role`) VALUES
-(2, 'ee', 'ebin', 'user'),
-(3, 'joyel', 'dszdr', 'user'),
-(4, 'joyel', '', 'user'),
-(5, 'joyel', '', 'user'),
-(6, 'joyel', '123', 'user'),
-(8, 'admin', 'asdf', 'user'),
-(10, 'hjv', 'vk', 'user'),
-(11, 'yicy', 'xcuy', 'user'),
-(12, 'abc', 'abcd', 'admin'),
-(13, 'gcjck', 'jycyd', 'user'),
-(14, '', '', 'user'),
-(15, '', '', 'user'),
-(16, 'admin', 'admin', 'user'),
-(17, '', '', 'user'),
-(18, 'admin', 'admin', 'user'),
-(19, 'admin', 'admin', 'user'),
-(20, 'admin', 'admin', 'user'),
-(21, 'ebbb', 'null', 'user'),
-(22, 'kirthy', 'johny', 'user'),
-(23, 'pp', '243', 'user'),
-(24, 'rajagiri', '123', 'user');
+(26, 'Athira', '123', 'admin'),
+(29, 'Kirthy', '456', 'user'),
+(30, 'yamini', 'yamini', 'user'),
+(31, 'akhitha', '234', 'user'),
+(32, 'aiswarya', '123', 'user'),
+(33, 'roshan', 'roshans', 'user'),
+(34, 'johny', 'johny', 'user'),
+(35, 'vin', 'vin', 'user'),
+(36, 'amena', 'ameena', 'user'),
+(37, 'alex', 'alex', 'user'),
+(38, 'remiya', 'remi', 'user'),
+(39, 'remiya', 'remi', 'user'),
+(40, 'kirthy', '123', 'user'),
+(41, 'amritha', 'amritha', 'user'),
+(42, 'yami', 'yami', 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `map`
+--
+
+CREATE TABLE IF NOT EXISTS `map` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `contact` varchar(250) NOT NULL,
+  `latitude` varchar(250) NOT NULL,
+  `logitude` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `map`
+--
+
+INSERT INTO `map` (`id`, `contact`, `latitude`, `logitude`) VALUES
+(1, '9961827794', '9.9312328', '76.2673041'),
+(2, '8139070005', '9.9188973', '77.1024902'),
+(3, '9496247121', '9.9188973', '77.9188973');
 
 -- --------------------------------------------------------
 
@@ -308,25 +309,23 @@ CREATE TABLE IF NOT EXISTS `payment` (
   `number` varchar(250) NOT NULL,
   `status` varchar(250) NOT NULL DEFAULT '0',
   PRIMARY KEY (`paymentid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
 
 --
 -- Dumping data for table `payment`
 --
 
 INSERT INTO `payment` (`paymentid`, `user_id`, `rent_id`, `amount`, `date`, `payed`, `balance`, `number`, `status`) VALUES
-(1, 'ee', '18', '1230', '2017-04-25', '20', '1230', 'OEGPJ9G4NY', '0'),
-(2, 'ee', '18', '0', '2017-04-25', '0', '0', 'Z91W4JZOKX', '0'),
-(3, 'ee', '18', '0', '2017-04-26', '0', '0', '1FJCBAYG4V', '0'),
-(4, 'kirthy', '20', '939247500', '2017-04-26', '2250', '939245250', '983W994TYQ', '0'),
-(5, 'kirthy', '20', '939247500', '2017-04-26', '2250', '939245250', 'ATXOL2GATR', '0'),
-(6, 'kirthy', '20', '997741500', '2017-04-26', '2250', '997739250', '3VODKRF17S', '0'),
-(7, 'kirthy', '20', '1851000', '2017-04-26', '2250', '1848750', '2PUQBTAOIC', '0'),
-(8, 'kirthy', '20', '2500', '2017-04-26', '1250', '1250', 'LHLZ3Q7FDP', '0'),
-(9, 'kirthy', '20', '97747500', '2017-04-26', '2250', '97745250', 'KEYG2K4WOK', '0'),
-(10, 'kirthy', '20', '9316500', '2017-04-26', '3000', '9313500', '8HFS63E39T', '0'),
-(11, 'kirthy', '20', '184500', '2017-04-26', '3750', '180750', '0EM5XI1SCX', '0'),
-(12, 'kirthy', '4', '3000', '2017-04-27', '3000', '0', '3QWDSK33KT', '0');
+(26, 'vin', '13', '495000', '2017-05-05', '495000', '0', '3L2ZHW7FAM', '1'),
+(27, 'amena', '27', '441000', '2017-06-03', '19600', '421400', 'GB9GQFT6CZ', '0'),
+(28, 'amena', '8', '819000', '2017-06-03', '819100', '0', 'IWRJIM6T7G', '1'),
+(29, 'remiya', '9', '984000', '2017-06-03', '984100', '0', '5JFD4OJZ5B', '1'),
+(30, 'kirthy', '11', '1107000', '2017-06-03', '1107034', '0', 'F606ZTM5BP', '1'),
+(31, 'remiya', '9', '984000', '2017-06-03', '12000', '972000', '53TSGI4735', '0'),
+(32, 'remiya', '12', '1168500', '2017-06-03', '1168534', '0', 'Y441DCCMHG', '1'),
+(33, 'kirthy', '12', '2118500', '2017-06-03', '23750', '2094750', '1AZLMSC8PV', '0'),
+(34, 'amritha', '12', '24158500', '2017-06-03', '14250', '24144250', 'R5VDO6NCW1', '0'),
+(35, 'yami', '11', '2106000', '2017-06-03', '18000', '2088000', 'EBQ8LHZZXJ', '0');
 
 -- --------------------------------------------------------
 
@@ -346,30 +345,24 @@ CREATE TABLE IF NOT EXISTS `registration` (
   `id_proof` varchar(250) NOT NULL,
   `license_no` varchar(250) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
 
 --
 -- Dumping data for table `registration`
 --
 
 INSERT INTO `registration` (`user_id`, `username`, `name`, `address`, `phno`, `gender`, `age`, `email_id`, `id_proof`, `license_no`) VALUES
-(12, 'ee', 'sdfds', 'dfds', '9747793475', 'dsf', 'df', 'dsfd', 'df', 'dsfsf'),
-(13, 'admin', 'fefew', 'qee', '12345', 'Female', '12', 'balakrishnanajith68@gmail.com', 'app.pdf', '1234'),
-(14, 'admin', 'athira', 'afhadsja', '4353654756', 'Female', '90', 'a@gmail.com', '', '7659870'),
-(15, 'hjv', 'msfvk', 'smdnv s', 'srg53516', 'Male', '58', '', 'C:UsersAnilDesktop354276-admin.jpg', 'kvubu'),
-(16, 'yicy', 'kguwr', 'oufu', 'u6464', 'Male', 'ufou', '', '', 'yifiyf'),
-(17, 'gcjck', 'uigiwrfui', 'vuksvuv', '56444369', 'Male', '25', '', '', '5464364'),
-(18, '', '', '', '', 'Male', '', '', '', ''),
-(19, '', '', '', '', 'Male', '', '', '', ''),
-(20, 'admin', '', '', '', 'Male', '', '', '', ''),
-(21, '', 'gfhkj', 'retr7', '', 'Male', '34', '', '', ''),
-(22, 'admin', 'rajesh', 'kerala', '876374919', 'Male', '34', 'a@gmail.com', '', '172369'),
-(23, 'admin', 'gayathri', 'kerala', '97864565', 'Male', '23', 'a@gmail.com', '', '893247'),
-(24, 'admin', 'athira', 'kerala', '9827389191', 'Female', '25', 'athira@gmail.com', '', '123456'),
-(25, 'ebbb', 'ebb', 'shdhs', '977', 'male', '23', 'ebb@gmail.com', '354276-admin.jpg', '123334'),
-(26, 'kirthy', 'kirthy', 'kiuiaidyv', '9961827794', 'female', '21', 'kirthyodackal@gmail.com', '1.jpg', '1234569'),
-(27, 'pp', 'athira', 'menachery', '27745322', 'null', '20', 'a@gmail.com', 'aadhar.png', '123'),
-(28, 'rajagiri', 'athira', 'mmm', '90', 'female', '20', 'p@gmail.com', 'aadhar.png', '21');
+(36, 'yamini', 'yamini', 'sayujyam', '12345677', 'female', '21', 'y@gmail.com', 'aadhar.png', '123456'),
+(37, 'akhitha', 'akhitha', 'menacheru', '0974767889', 'female', '20', 'a@gmail.com', 'aadhar.png', '567'),
+(38, 'aiswarya', 'aiswarya', 'kerala', '8139070005', 'female', '20', 'a@gmail.com', 'DRIVING LICENSE.png', 'u1238494'),
+(40, 'johny', 'johny', 'rockyroad mountian', '9946697326', 'male', '20', 'johny@gmail.com', 'DRIVING LICENSE.png', '2345'),
+(41, 'vin', 'vineetha', 'vithayil', '2345679', 'female', '20', 'vin@gmail.com', 'DRIVING LICENSE.png', '235789'),
+(43, 'alex', 'alex', 'laning', '9061753075', 'null', '21', 'alex@gmail.com', 'aadhar.png', '234ret'),
+(44, 'remiya', 'remiya', 'kandoth', '8891077117', 'female', '20', 'r@gmail.com', 'DRIVING LICENSE.png', '8275493742'),
+(45, 'remiya', 'remiya', 'kandoth', '45239127690', 'female', '20', 'r@gmail.com', 'DRIVING LICENSE.png', '63594783'),
+(46, 'kirthy', 'kirthy', 'kerala', '9961827794', 'female', '30', 'k@gmail.com', 'DRIVING LICENSE.png', '56213479814'),
+(47, 'amritha', 'amritha', 'andra pradesh', '6531274827', 'female', '45', 'a@gmail.com', 'aadhar.png', '74637898'),
+(48, 'yami', 'yami', 'kannur', '8139070005', 'female', '23', 'y@gmail.com', 'DRIVING LICENSE.png', '46678');
 
 -- --------------------------------------------------------
 
@@ -412,8 +405,8 @@ CREATE TABLE IF NOT EXISTS `vehicletype` (
 --
 
 INSERT INTO `vehicletype` (`v_id`, `vehicle_type`) VALUES
-(1, 'two wheeler'),
-(2, 'four wheeler');
+(1, 'Two Wheeler'),
+(2, 'Four Wheeler');
 
 -- --------------------------------------------------------
 
@@ -433,23 +426,28 @@ CREATE TABLE IF NOT EXISTS `vehicle_list` (
   `payment` varchar(250) NOT NULL DEFAULT '0',
   `model` varchar(250) NOT NULL,
   PRIMARY KEY (`vehicle_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `vehicle_list`
 --
 
 INSERT INTO `vehicle_list` (`vehicle_id`, `vehicletype`, `vehiclename`, `category`, `colour`, `img`, `mileage`, `status`, `payment`, `model`) VALUES
-(4, '1', 'Yamaha YZF R15', '1', 'blue', 'yamaha_yzfr15_600x300.jpg', '40 Kmpl', '0', '3000', '149 CC'),
 (5, '1', 'Bajaj Dominar 400 ', '1', 'black', 'right-bajaj-dominar_600x300.jpg', ' 35 Kmpl', '0', '2500', '373 CC'),
 (6, '1', 'Bajaj Pulsar SS 400', '1', 'yellow', 'bajaj-pulsar-ss-400.jpg', '42kmpl', '0', '2800', '373 CC'),
 (7, '1', 'hero-maestro', '2', 'blue', '-hero-maestro-mileage-50kmpl.jpg', '150kmpl', '0', '2000', '160 CC'),
 (8, '2', 'mahindra xylo', '3', 'black', 'MAHINDRA XYLO colour-fiery-black mileage-14.0kmpl.jpg', '16 kmpl', '0', '3500', '157 CC'),
 (9, '2', 'jeep-wrangler', '5', 'red', 'jeep_wrangler_gas_mileage_2012-31baipty83wh0fp4jpdo22.jpg', '20kmpl', '0', '8000', '200 CC'),
-(10, '2', 'renegade', '5', 'green', 'jeep_wrangler_gas_mileage_2012-31baipty83wh0fp4jpdo22.jpg', '18kmpl', '0', '1000', '195 CC'),
 (11, '2', 'tata-winger', '4', 'white', 'tata-winger mileage-16kmpl.png', '17kmpl', '0', '9000', '150 CC'),
 (12, '2', 'suzuki', '4', 'white', 'images.jpg', '19kmpl', '0', '9500', '130 CC'),
-(13, '2', 'tempo traveller', '4', 'white', 'tempo traveller (1).jpg', '15 kmpl', '0', '7500', '120 CC');
+(13, '2', 'tempo traveller', '4', 'white', 'tempo traveller (1).jpg', '15 kmpl', '0', '7500', '120 CC'),
+(14, '2', 'new micra', '3', 'orange', '17tdieulhd_MICRA-Color_EBF_002.png.ximg.m_12_h.smart.png', '16kmpl', '0', '6500', '150 CC'),
+(18, '2', 'nisn fron', '6', 'black', 'NISN_FRON_2013.png', '18kmpl', '0', '10000', '130 CC'),
+(19, '1', 'TVS jupiter', '2', 'grey', 'tvs jupiter.jpg', '16kmpl', '0', '6700', '150 CC'),
+(20, '1', 'yamaha cygnus alpha', '2', 'RED', 'Yamaha-Cygnus-Alpha-62-kmpl.jpg', '60kmpl', '0', '7000', '166CC'),
+(21, '2', 'audi A3', '3', 'white', 'audi A3.jpg', '18kmpl', '0', '8900', '155 CC'),
+(22, '2', 'audi A6', '3', 'grey', 'audi A6.jpg', '16kmpl', '0', '8900', '140cc'),
+(27, '2', 'cherokee', '5', 'red', 'jeep_wrangler_gas_mileage_2012-31baipty83wh0fp4jpdo22.jpg', '18kmpl', '0', '9800', '150CC');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
